@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import removeIcon from "../../assets/images/icon-remove-item.svg";
 import emptyImage from "../../assets/images/illustration-empty-cart.svg";
 import carbon from "../../assets/images/icon-carbon-neutral.svg";
-const Cart = ({ cart, onQuantityChange, onRemoveProduct }) => {
+const Cart = ({ cart, onQuantityChange, onRemoveProduct, quantity }) => {
   const [cartItems, setCartItems] = useState([]);
   const [totalQuantity, setTotalQuantity] = useState(0);
   const handleQuantityChange = (product, quantity) => {
@@ -41,6 +41,9 @@ const Cart = ({ cart, onQuantityChange, onRemoveProduct }) => {
                       </span>
                       <span className="price text-preset-4">
                         @ ${product.price}
+                      </span>
+                      <span className="price text-preset-4">
+                      @ ${(product.price * (quantity || 1)).toFixed(2)}
                       </span>
                     </div>
                     <button
