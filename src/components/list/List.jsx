@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Product from "../product/Product";
 import "./List.css";
 import axios from "axios";
-const List = () => {
+const List = ({ onAddToCart }) => {
   const [products, setProducts] = useState([]);
 
   const fetchProdcuts = async () => {
@@ -23,8 +23,13 @@ const List = () => {
       <section className="list-section">
         <h1 className="text-preset-1">Desserts</h1>
         <div className="products-list">
-          {Array.isArray(products) &&
-            products.map((prod, index) => <Product key={index} data={prod} />)}
+          {products.map((product, index) => (
+            <Product
+              key={`${product.id}-${index}`}
+              data={product}
+              onAddToCart={onAddToCart}
+            />
+          ))}
         </div>
       </section>
     </>
