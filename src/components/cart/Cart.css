@@ -3,4 +3,22 @@
     width: 384px;
     background-color: var(--white-clr);
     padding: 24px;
+    height: fit-content;
+    border-radius: 10px;
+}
+.cart-section h2
+{
+    color: var(--red-clr);
+    margin-bottom: 24px;
+}
+.cart-section img
+{
+    display: block;
+    margin: auto;
+    margin-bottom: 16px;
+}
+.cart-section p
+{
+    color: var(--rose-500-clr);
+    text-align: center;
 }
