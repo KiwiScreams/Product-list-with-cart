@@ -6,10 +6,14 @@ import emptyImage from "../../assets/images/illustration-empty-cart.svg";
 import carbon from "../../assets/images/icon-carbon-neutral.svg";
 const Cart = ({ cart, onQuantityChange, onRemoveProduct }) => {
   const [cartItems, setCartItems] = useState([]);
-  const totalPrice = cartItems.reduce((acc, item) => {
-    return acc + item.product.price * item.quantity;
-  }, 0);
-
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  const handleQuantityChange = (product, quantity) => {
+    onQuantityChange(product, quantity);
+    setTotalQuantity(cart.reduce((acc, current) => acc + current.quantity, 0));
+  };
+//   const totalPrice = cartItems.reduce((acc, item) => {
+//     return acc + item.product.price * item.quantity;
+//   }, 0);
   return (
     <>
       <section className="cart-section">
@@ -34,13 +38,16 @@ const Cart = ({ cart, onQuantityChange, onRemoveProduct }) => {
                         @ ${product.price}
                       </span>
                     </div>
-                    <button onClick={() => onRemoveProduct(index)} className="remove"></button>
+                    <button
+                      onClick={() => onRemoveProduct(index)}
+                      className="remove"
+                    ></button>
                   </li>
                 ))}
               </ul>
               <p className="total text-preset-4">
-                <span>Order Total</span>{" "}
-                <span className="text-preset-2">${totalPrice.toFixed(2)}</span>
+                <span>Order Total</span>
+                <span className="text-preset-2">${totalQuantity}</span>
               </p>
               <div className="carbon">
                 <img src={carbon} alt="" />

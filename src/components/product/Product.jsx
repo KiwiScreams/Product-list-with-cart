@@ -5,20 +5,25 @@ import plus from "../../assets/images/icon-increment-quantity.svg";
 import { useContext, useState } from "react";
 const Product = ({ data, onAddToCart, onQuantityChange }) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
-  const [quantity, setQuantity] = useState(1);
+const [quantity, setQuantity] = useState(1);
   const handleAddToCart = () => {
     setIsAddedToCart(true);
     onAddToCart(data, quantity);
   };
   const handleDecrementQuantity = () => {
     if (quantity > 1) {
+      onQuantityChange(data, quantity - 1);
       setQuantity(quantity - 1);
-      onQuantityChange(quantity - 1);
     }
   };
   const handleIncrementQuantity = () => {
+    onQuantityChange(data, quantity + 1);
     setQuantity(quantity + 1);
-    onQuantityChange(quantity + 1);
+  };
+  const handleAddToCartAndSetIsAdded = () => {
+    setQuantity(1);
+    handleAddToCart();
+    setIsAddedToCart(true);
   };
   return (
     <>
@@ -26,7 +31,7 @@ const Product = ({ data, onAddToCart, onQuantityChange }) => {
         <div
           className="product-image"
           style={{
-            backgroundImage: `url(${data.image.desktop})`,
+            backgroundImage: `url(${data?.image.desktop})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -44,7 +49,7 @@ const Product = ({ data, onAddToCart, onQuantityChange }) => {
           ) : (
             <div
               className="text-preset-4 add-cart cart-btn"
-              onClick={() => onAddToCart(data, quantity)}
+              onClick={handleAddToCartAndSetIsAdded}
             >
               <img src={cartIcon} alt="Add to cart" />
               Add to Cart
