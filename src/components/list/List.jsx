@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Product from "../product/Product";
 import "./List.css";
 import axios from "axios";
-const List = ({ onAddToCart }) => {
+const List = ({ onAddToCart, onQuantityChange }) => {
   const [products, setProducts] = useState([]);
 
   const fetchProdcuts = async () => {
@@ -28,6 +28,7 @@ const List = ({ onAddToCart }) => {
               key={`${product.id}-${index}`}
               data={product}
               onAddToCart={onAddToCart}
+              onQuantityChange={onQuantityChange}
             />
           ))}
         </div>
