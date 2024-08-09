@@ -9,7 +9,7 @@ const Product = ({ data, onAddToCart }) => {
 
   const handleAddToCart = () => {
     setIsAddedToCart(true);
-    onAddToCart(data);
+    onAddToCart(data, quantity);
   };
   const handleDecrementQuantity = () => {
     setQuantity(quantity - 1);

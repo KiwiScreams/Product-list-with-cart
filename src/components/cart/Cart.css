@@ -22,3 +22,36 @@
     color: var(--rose-500-clr);
     text-align: center;
 }
+.cart-section .cart-items ul li
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-section ul li p
+{
+    color: var(--rose-900-clr);
+    font-weight: 900;
+}
+.cart-section .cart-items .cart-info .price
+{
+    color: var(--rose-500-clr);
+    font-weight: 400;
+    margin-left: 20px;
+}
+.cart-section .cart-items .cart-info .quantity
+{
+    color: var(--red-clr);
+}
+.cart-section .cart-items button
+{
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid var(--rose-400-clr);
+    width: 20px;
+    height: 20px;
+    background: url(../../assets/images/icon-remove-item.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}

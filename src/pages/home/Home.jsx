@@ -9,12 +9,16 @@ const Home = () => {
   const handleAddToCart = (product) => {
     setCart([...cart, product]);
   };
-
+  const handleRemoveProduct = (index) => {
+    const newCart = [...cart];
+    newCart.splice(index, 1);
+    setCart(newCart);
+  };
   return (
     <>
       <section className="home-section">
         <List onAddToCart={handleAddToCart} />
-        <Cart cart={cart} />
+        <Cart cart={cart} onRemoveProduct={handleRemoveProduct} />
       </section>
     </>
   );
