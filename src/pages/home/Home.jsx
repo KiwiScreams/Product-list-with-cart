@@ -6,14 +6,14 @@ import Product from "../../components/product/Product";
 const Home = () => {
   const [cart, setCart] = useState([]);
 
-  const handleAddToCart = (product) => {
-    setCart([...cart, product]);
-  };
-  const handleRemoveProduct = (index) => {
-    const newCart = [...cart];
-    newCart.splice(index, 1);
-    setCart(newCart);
-  };
+    const handleAddToCart = (product) => {
+      setCart([...cart, product]);
+    };
+    const handleRemoveProduct = (index) => {
+      const newCart = [...cart];
+      newCart.splice(index, 1);
+      setCart(newCart);
+    };
   return (
     <>
       <section className="home-section">
