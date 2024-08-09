@@ -1,8 +1,13 @@
+import Cart from "../../components/cart/Cart";
+import List from "../../components/list/List";
 import "./Home.css";
 const Home = () => {
   return (
     <>
-      <h1>HOME</h1>
+      <section className="home-section">
+        <List />
+        <Cart />
+      </section>
     </>
   );
 };
