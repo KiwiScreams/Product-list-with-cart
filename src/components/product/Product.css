@@ -12,37 +12,30 @@
 }
 .product div.add-cart
 {
+    background-color: var(--white-clr);
+    gap: 8px;
+    border: 1px solid var(--rose-400-clr);
+}
+.product .quantity-btn
+{
+    background-color: var(--red-clr);
+    gap: 46px;
+    color: var(--white-clr);
+    font-weight: 600;
+    border: 1px solid var(--red-clr);
+}
+.product .cart-btn
+{
     position: absolute;
     bottom: -22px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 50px;
-    background-color: var(--white-clr);
     width: 160px;
     height: 44px;
     display: flex;
     align-items: center;
-    gap: 8px;
     justify-content: center;
-    border: 1px solid var(--rose-400-clr);
-}
-.product .quantity-btn
-{
-    position: absolute;
-    bottom: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50px;
-    background-color: var(--red-clr);
-    width: 160px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    gap: 46px;
-    color: var(--white-clr);
-    font-weight: 600;
-    justify-content: center;
-    border: 1px solid var(--rose-400-clr);
 }
 .product .quantity-btn .btn
 {
