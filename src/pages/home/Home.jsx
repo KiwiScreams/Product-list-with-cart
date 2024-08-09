@@ -26,7 +26,10 @@ const Home = () => {
   return (
     <>
       <section className="home-section">
-        <List onAddToCart={handleAddToCart} onQuantityChange={handleQuantityChange}/>
+        <List
+          onAddToCart={handleAddToCart}
+          onQuantityChange={handleQuantityChange}
+        />
         <Cart
           cart={cart}
           onRemoveProduct={handleRemoveProduct}
