@@ -1,5 +1,6 @@
 .home-section
 {
-    padding: 88px 112px;
+    padding: 88px 100px;
     display: flex;
+    justify-content: space-between;
 }
