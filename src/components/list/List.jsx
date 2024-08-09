@@ -7,7 +7,7 @@ const List = () => {
 
   const fetchProdcuts = async () => {
     try {
-      const response = await axios.get('data.json');
+      const response = await axios.get("data.json");
       console.log(response.data);
       setProducts(response.data);
     } catch (error) {

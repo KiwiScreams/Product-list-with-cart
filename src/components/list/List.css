@@ -7,3 +7,11 @@
     color: var(--rose-900-clr);
     margin-bottom: 32px;
 }
+.list-section .products-list
+{
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+}
