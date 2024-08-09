@@ -3,11 +3,20 @@ import cartIcon from "../../assets/images/icon-add-to-cart.svg";
 import minus from "../../assets/images/icon-decrement-quantity.svg";
 import plus from "../../assets/images/icon-increment-quantity.svg";
 import { useState } from "react";
-const Product = ({ data }) => {
-    const [isClicked, setIsClicked] = useState(false);  
-    const handleClick = () => {
-        setIsClicked(!isClicked);
-      };
+const Product = ({ data, onAddToCart }) => {
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+
+  const handleAddToCart = () => {
+    setIsAddedToCart(true);
+    onAddToCart(data);
+  };
+  const handleDecrementQuantity = () => {
+    setQuantity(quantity - 1);
+  };
+  const handleIncrementQuantity = () => {
+    setQuantity(quantity + 1);
+  };
   return (
     <>
       <div className="product">
@@ -19,38 +28,23 @@ const Product = ({ data }) => {
             backgroundPosition: "center",
           }}
         >
-          <div className="text-preset-4 add-cart cart-btn" onClick={handleClick}>
-            <img src={cartIcon} alt="" />
-            Add to Cart
-          </div>
-          {isClicked && (
+          {isAddedToCart ? (
             <div className="text-preset-4 quantity-btn cart-btn">
-              <span className="btn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="2"
-                  fill="none"
-                  viewBox="0 0 10 2"
-                >
-                  <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" />
-                </svg>
+              <span className="btn" onClick={handleDecrementQuantity}>
+                <img src={minus} alt="Decrement quantity" />
               </span>
-              <span className="quantity">1</span>
-              <span className="btn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="10"
-                  fill="none"
-                  viewBox="0 0 10 10"
-                >
-                  <path
-                    fill="#fff"
-                    d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
-                  />
-                </svg>
+              <span className="quantity">{quantity}</span>
+              <span className="btn" onClick={handleIncrementQuantity}>
+                <img src={plus} alt="Increment quantity" />
               </span>
+            </div>
+          ) : (
+            <div
+              className="text-preset-4 add-cart cart-btn"
+              onClick={handleAddToCart}
+            >
+              <img src={cartIcon} alt="Add to cart" />
+              Add to Cart
             </div>
           )}
         </div>

@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Header from "./components/shared/header/Header";
 import Home from "./pages/home/Home";
 
 function App() {
+
   return (
     <>
       <Header />
