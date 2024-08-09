@@ -57,3 +57,17 @@ body
   line-height: 150%;
   letter-spacing: 0;
 }
+::-webkit-scrollbar
+{
+  width: 10px;
+  display: block;
+}
+::-webkit-scrollbar-thumb
+{
+  background-color: var(--red-clr);
+  border-radius: 20px;
+}
+::-webkit-scrollbar-track
+{
+  background-color: var(--rose-50-clr);
+}
