@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import Product from "../product/Product";
 import "./List.css";
+import axios from "axios";
 const List = () => {
   const [products, setProducts] = useState([]);
 
-  const fetchPosts = async () => {
+  const fetchProdcuts = async () => {
     try {
-      const response = await fetch("data.json");
-      const json = await response.json();
-      console.log(json);
-      setProducts(json);
+      const response = await axios.get('data.json');
+      console.log(response.data);
+      setProducts(response.data);
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    fetchPosts();
+    fetchProdcuts();
   }, []);
   return (
     <>
