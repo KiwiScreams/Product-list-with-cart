@@ -1,0 +1,9 @@
+.list-section
+{
+    width: 80%;
+}
+.list-section h1
+{
+    color: var(--rose-900-clr);
+    margin-bottom: 32px;
+}
