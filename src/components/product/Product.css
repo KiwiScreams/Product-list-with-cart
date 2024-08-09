@@ -16,6 +16,11 @@
     gap: 8px;
     border: 1px solid var(--rose-400-clr);
 }
+.product div.add-cart:hover
+{
+    color: var(--red-clr);
+    border: 1px solid var(--red-clr);
+}
 .product .quantity-btn
 {
     background-color: var(--red-clr);

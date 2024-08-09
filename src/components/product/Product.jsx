@@ -4,14 +4,10 @@ import minus from "../../assets/images/icon-decrement-quantity.svg";
 import plus from "../../assets/images/icon-increment-quantity.svg";
 import { useState } from "react";
 const Product = ({ data }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const handleMouseOver = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsHovered(false);
-  };
+    const [isClicked, setIsClicked] = useState(false);  
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+      };
   return (
     <>
       <div className="product">
@@ -22,14 +18,12 @@ const Product = ({ data }) => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
         >
-          <div className="text-preset-4 add-cart cart-btn">
+          <div className="text-preset-4 add-cart cart-btn" onClick={handleClick}>
             <img src={cartIcon} alt="" />
             Add to Cart
           </div>
-          {isHovered && (
+          {isClicked && (
             <div className="text-preset-4 quantity-btn cart-btn">
               <span className="btn">
                 <svg
