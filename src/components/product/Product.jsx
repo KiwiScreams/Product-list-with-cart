@@ -5,9 +5,11 @@ import plus from "../../assets/images/icon-increment-quantity.svg";
 import { useContext, useState } from "react";
 const Product = ({ data, onAddToCart, onQuantityChange }) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
-const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);
+  const [inCart, setInCart] = useState(false);
   const handleAddToCart = () => {
     setIsAddedToCart(true);
+    setInCart(true);
     onAddToCart(data, quantity);
   };
   const handleDecrementQuantity = () => {
@@ -36,7 +38,7 @@ const [quantity, setQuantity] = useState(1);
             backgroundPosition: "center",
           }}
         >
-          {isAddedToCart ? (
+          {inCart ? (
             <div className="text-preset-4 quantity-btn cart-btn">
               <span className="btn" onClick={handleDecrementQuantity}>
                 <img src={minus} alt="Decrement quantity" />

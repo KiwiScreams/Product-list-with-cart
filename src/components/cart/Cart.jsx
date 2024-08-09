@@ -9,11 +9,16 @@ const Cart = ({ cart, onQuantityChange, onRemoveProduct }) => {
   const [totalQuantity, setTotalQuantity] = useState(0);
   const handleQuantityChange = (product, quantity) => {
     onQuantityChange(product, quantity);
-    setTotalQuantity(cart.reduce((acc, current) => acc + current.quantity, 0));
+    const updatedCart = cart.map((item) => {
+      if (item.id === product.id) {
+        return { ...item, quantity };
+      }
+      return item;
+    });
+    setTotalQuantity(
+      updatedCart.reduce((acc, current) => acc + current.quantity, 0)
+    );
   };
-//   const totalPrice = cartItems.reduce((acc, item) => {
-//     return acc + item.product.price * item.quantity;
-//   }, 0);
   return (
     <>
       <section className="cart-section">
@@ -47,7 +52,13 @@ const Cart = ({ cart, onQuantityChange, onRemoveProduct }) => {
               </ul>
               <p className="total text-preset-4">
                 <span>Order Total</span>
-                <span className="text-preset-2">${totalQuantity}</span>
+                <span className="text-preset-2">
+                  $
+                  {cart.reduce(
+                    (acc, current) => acc + current.price * current.quantity,
+                    0
+                  )}
+                </span>
               </p>
               <div className="carbon">
                 <img src={carbon} alt="" />
