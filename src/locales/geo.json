@@ -1,5 +1,7 @@
 {
-    "Welcome": "სალამი",
-    "home": "სახლი",
-    "Add to Cart": "კალათაში დამატება"
+    "yourCart": "თქვენი კალათა",
+    "addedItemsWillAppearHere": "თქვენი დამატებული ნივთები აქ გამოჩნდება",
+    "orderTotal": "შეკვეთის ჯამი",
+    "carbonNeutralDelivery": "ეს არის ნახშირბად-ნეიტრალური მიწოდება",
+    "confirmOrder": "შეკვეთის დადასტურება"
   }

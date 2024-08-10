@@ -3,12 +3,20 @@ import List from "../../components/list/List";
 import { useState } from "react";
 import "./Home.css";
 import Product from "../../components/product/Product";
-import { useTransition } from "react";
+import { useTranslation } from "react-i18next";
 const Home = () => {
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
-  const handleAddToCart = (product) => {
-    setCart([...cart, product]);
+  // const handleAddToCart = (product) => {
+  //   setCart([...cart, product]);
+  // };
+  const handleAddToCart = (product, quantity) => {
+    const existingProduct = cart.find((p) => p.id === product.id);
+    if (existingProduct) {
+      existingProduct.quantity += quantity;
+    } else {
+      setCart([...cart, { ...product, quantity }]);
+    }
   };
   const handleRemoveProduct = (index) => {
     const newCart = [...cart];
@@ -35,10 +43,8 @@ const Home = () => {
         />
         <Cart
           cart={cart}
-          onQuantityChange={(product, quantity) =>
-            console.log("Quantity changed")
-          }
-          onRemoveProduct={(index) => handleRemoveProduct(index)}
+          onQuantityChange={handleQuantityChange}
+          onRemoveProduct={handleRemoveProduct}
         />
       </section>
     </>

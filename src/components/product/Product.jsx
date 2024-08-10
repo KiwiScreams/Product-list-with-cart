@@ -13,6 +13,7 @@ const Product = ({ product, onAddToCart, onQuantityChange, quantity }) => {
   const language = i18n.language;
   const products = data[language].products;
   const currentProduct = products.find((p) => p.id === id);
+
   const handleAddToCart = () => {
     setIsAddedToCart(true);
     onAddToCart(currentProduct, localQuantity);
@@ -34,7 +35,6 @@ const Product = ({ product, onAddToCart, onQuantityChange, quantity }) => {
   };
 
   const totalPrice = currentProduct.price * localQuantity;
-
   return (
     <>
       <div className="product">
@@ -48,11 +48,17 @@ const Product = ({ product, onAddToCart, onQuantityChange, quantity }) => {
         >
           {isAddedToCart ? (
             <div className="text-preset-4 quantity-btn cart-btn">
-              <span className="btn" onClick={handleDecrementQuantity}>
+              <span
+                className="btn"
+                onClick={() => onQuantityChange(product, product.quantity - 1)}
+              >
                 <img src={minus} alt="Decrement quantity" />
               </span>
-              <span className="quantity">{localQuantity}</span>
-              <span className="btn" onClick={handleIncrementQuantity}>
+              <span className="quantity">{product.quantity}</span>
+              <span
+                className="btn"
+                onClick={() => onQuantityChange(product, product.quantity + 1)}
+              >
                 <img src={plus} alt="Increment quantity" />
               </span>
             </div>
@@ -68,7 +74,9 @@ const Product = ({ product, onAddToCart, onQuantityChange, quantity }) => {
         </div>
         <h3 className="text-preset-4 category">{currentProduct.category}</h3>
         <h2 className="text-preset-3 name">{currentProduct.name}</h2>
-        <p className="price text-preset-3">${currentProduct.price}</p>
+        <p className="price text-preset-3">
+          ${currentProduct.price.toFixed(2)}
+        </p>
       </div>
     </>
   );
