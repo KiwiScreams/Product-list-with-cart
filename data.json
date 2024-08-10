@@ -1,5 +1,6 @@
 {
   "eng": {
+    "Add to Cart": "Add to Cart",
     "products": [
       {
         "id": 1,
@@ -58,7 +59,7 @@
           "desktop": "./src/assets/images/image-baklava-desktop.jpg"
         },
         "name": "Pistachio Baklava",
-        "category": "Baklava",
+        "category": "ბაქლავა",
         "price": 4.0
       },
       {
@@ -112,6 +113,7 @@
     ]
   },
   "geo": {
+    "Add to Cart": "კალათაში დამატება",
     "products": [
       {
         "id": 1,
@@ -121,8 +123,8 @@
           "tablet": "./src/assets/images/image-waffle-tablet.jpg",
           "desktop": "./src/assets/images/image-waffle-desktop.jpg"
         },
-        "name": "ვაფლი",
-        "category": "Waffle",
+        "name": "ვაფლი კენკრით",
+        "category": "ვაფლი",
         "price": 6.5
       },
       {
@@ -133,8 +135,8 @@
           "tablet": "./src/assets/images/image-creme-brulee-tablet.jpg",
           "desktop": "./src/assets/images/image-creme-brulee-desktop.jpg"
         },
-        "name": "Vanilla Bean Crème Brûlée",
-        "category": "Crème Brûlée",
+        "name": "ვანილის ლობიოს კრემი ბრულე",
+        "category": "კრემი ბრულე",
         "price": 7.0
       },
       {
@@ -145,8 +147,8 @@
           "tablet": "./src/assets/images/image-macaron-tablet.jpg",
           "desktop": "./src/assets/images/image-macaron-desktop.jpg"
         },
-        "name": "Macaron Mix of Five",
-        "category": "Macaron",
+        "name": "მაკარონის მიქსი ხუთიდან",
+        "category": "მაკარონი",
         "price": 8.0
       },
       {
@@ -157,8 +159,8 @@
           "tablet": "./src/assets/images/image-tiramisu-tablet.jpg",
           "desktop": "./src/assets/images/image-tiramisu-desktop.jpg"
         },
-        "name": "Classic Tiramisu",
-        "category": "Tiramisu",
+        "name": "კლასიკური ტირამისუ",
+        "category": "ტირამისუ",
         "price": 5.5
       },
       {
@@ -169,8 +171,8 @@
           "tablet": "./src/assets/images/image-baklava-tablet.jpg",
           "desktop": "./src/assets/images/image-baklava-desktop.jpg"
         },
-        "name": "Pistachio Baklava",
-        "category": "Baklava",
+        "name": "ფისტა ბაქლავა",
+        "category": "ბაქლავა",
         "price": 4.0
       },
       {
@@ -181,8 +183,8 @@
           "tablet": "./src/assets/images/image-meringue-tablet.jpg",
           "desktop": "./src/assets/images/image-meringue-desktop.jpg"
         },
-        "name": "Lemon Meringue Pie",
-        "category": "Pie",
+        "name": "ლიმონის ღვეზელი",
+        "category": "ღვეზელი",
         "price": 5.0
       },
       {
@@ -193,8 +195,8 @@
           "tablet": "./src/assets/images/image-cake-tablet.jpg",
           "desktop": "./src/assets/images/image-cake-desktop.jpg"
         },
-        "name": "Red Velvet Cake",
-        "category": "Cake",
+        "name": "წითელი ხავერდის ტორტი",
+        "category": "ტორტი",
         "price": 4.5
       },
       {
@@ -205,8 +207,8 @@
           "tablet": "./src/assets/images/image-brownie-tablet.jpg",
           "desktop": "./src/assets/images/image-brownie-desktop.jpg"
         },
-        "name": "Salted Caramel Brownie",
-        "category": "Brownie",
+        "name": "დამარილებული კარამელის ბრაუნი",
+        "category": "ბრაუნი",
         "price": 4.5
       },
       {
@@ -217,8 +219,8 @@
           "tablet": "./src/assets/images/image-panna-cotta-tablet.jpg",
           "desktop": "./src/assets/images/image-panna-cotta-desktop.jpg"
         },
-        "name": "Vanilla Panna Cotta",
-        "category": "Panna Cotta",
+        "name": "ვანილის პანაკოტა",
+        "category": "პანაკოტა",
         "price": 6.5
       }
     ]
