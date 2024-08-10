@@ -12,12 +12,12 @@ i18n.use(initReactI18next).init({
   // defaultNS: "common",
   resources: {
     eng: {
-      // common: common_eng,
-      Translation: data,
+      common: common_eng,
+      // Translation: data,
     },
     geo: {
-      // common: common_geo,
-      Translation: data_geo,
+      common: common_geo,
+      // Translation: data_geo,
     },
   },
   lng: "eng",

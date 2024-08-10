@@ -62,7 +62,7 @@ const Product = ({ product, onAddToCart, onQuantityChange, quantity }) => {
               onClick={handleAddToCart}
             >
               <img src={cartIcon} alt="Add to cart" />
-              {t("add_to_cart")}
+              {t("Add to Cart")}
             </div>
           )}
         </div>
