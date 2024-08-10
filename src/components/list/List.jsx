@@ -6,12 +6,12 @@ import { useTranslation } from "react-i18next";
 const List = ({ onAddToCart, onQuantityChange }) => {
   const [products, setProducts] = useState([]);
   const [quantities, setQuantities] = useState({});
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation("Translation");
   const language = i18n.language;
   const fetchProdcuts = async () => {
     try {
       const response = await axios.get("data.json");
-      const languageProducts = response.data[language].products; // Get the products array for the current language
+      const languageProducts = response.data[language].products;
       setProducts(languageProducts);
       setQuantities(
         languageProducts.reduce(
@@ -35,10 +35,13 @@ const List = ({ onAddToCart, onQuantityChange }) => {
     }));
     onQuantityChange(productId, newQuantity);
   };
+
   return (
     <>
       <section className="list-section">
-        <h1 className="text-preset-1">Desserts</h1>
+        <h1 className="text-preset-1">
+          {language === "geo" ? "დესერტები" : "Desserts"}
+        </h1>
         <div className="products-list">
           {products.map((product, index) => (
             <Product

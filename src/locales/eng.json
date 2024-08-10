@@ -1,5 +1,7 @@
 {
-    "Welcome": "Welcome to React and react-i18next",
-    "home": "HOME",
-    "Add to Cart": "Add to Cart"
-  }
+  "yourCart": "Your Cart",
+  "addedItemsWillAppearHere": "Your added items will appear here",
+  "orderTotal": "Order Total",
+  "carbonNeutralDelivery": "This is a carbon-neutral delivery",
+  "confirmOrder": "Confirm Order"
+}
