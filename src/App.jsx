@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Header from "./components/shared/header/Header";
 import Home from "./pages/home/Home";
 import i18n from "i18next";
 import { useTranslation, initReactI18next, Translation } from "react-i18next";
@@ -40,7 +39,6 @@ function App() {
         <option value="eng">ENG</option>
         <option value="geo">GEO</option>
       </select>
-      <Header />
       <Home />
     </>
   );
