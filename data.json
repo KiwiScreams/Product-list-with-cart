@@ -1,6 +1,5 @@
 {
   "eng": {
-    "Add to Cart": "Add to Cart",
     "products": [
       {
         "id": 1,
@@ -12,7 +11,8 @@
         },
         "name": "Waffle with Berries",
         "category": "Waffle",
-        "price": 6.5
+        "price": 6.5,
+        "AddtoCart": "Add to Cart"
       },
       {
         "id": 2,
@@ -24,7 +24,8 @@
         },
         "name": "Vanilla Bean Crème Brûlée",
         "category": "Crème Brûlée",
-        "price": 7.0
+        "price": 7.0,
+        "AddtoCart": "Add to Cart"
       },
       {
         "id": 3,
@@ -36,7 +37,8 @@
         },
         "name": "Macaron Mix of Five",
         "category": "Macaron",
-        "price": 8.0
+        "price": 8.0,
+        "AddtoCart": "Add to Cart"
       },
       {
         "id": 4,
@@ -48,7 +50,8 @@
         },
         "name": "Classic Tiramisu",
         "category": "Tiramisu",
-        "price": 5.5
+        "price": 5.5,
+        "AddtoCart": "Add to Cart"
       },
       {
         "id": 5,
@@ -60,7 +63,8 @@
         },
         "name": "Pistachio Baklava",
         "category": "ბაქლავა",
-        "price": 4.0
+        "price": 4.0,
+        "AddtoCart": "Add to Cart"
       },
       {
         "id": 6,
@@ -72,7 +76,8 @@
         },
         "name": "Lemon Meringue Pie",
         "category": "Pie",
-        "price": 5.0
+        "price": 5.0,
+        "AddtoCart": "Add to Cart"
       },
       {
         "id": 7,
@@ -84,7 +89,8 @@
         },
         "name": "Red Velvet Cake",
         "category": "Cake",
-        "price": 4.5
+        "price": 4.5,
+        "AddtoCart": "Add to Cart"
       },
       {
         "id": 8,
@@ -96,7 +102,8 @@
         },
         "name": "Salted Caramel Brownie",
         "category": "Brownie",
-        "price": 4.5
+        "price": 4.5,
+        "AddtoCart": "Add to Cart"
       },
       {
         "id": 9,
@@ -108,12 +115,12 @@
         },
         "name": "Vanilla Panna Cotta",
         "category": "Panna Cotta",
-        "price": 6.5
+        "price": 6.5,
+        "AddtoCart": "Add to Cart"
       }
     ]
   },
   "geo": {
-    "Add to Cart": "კალათაში დამატება",
     "products": [
       {
         "id": 1,
@@ -125,7 +132,8 @@
         },
         "name": "ვაფლი კენკრით",
         "category": "ვაფლი",
-        "price": 6.5
+        "price": 6.5,
+        "AddtoCart": "კალათაში დამატება"
       },
       {
         "id": 2,
@@ -137,7 +145,8 @@
         },
         "name": "ვანილის ლობიოს კრემი ბრულე",
         "category": "კრემი ბრულე",
-        "price": 7.0
+        "price": 7.0,
+        "AddtoCart": "კალათაში დამატება"
       },
       {
         "id": 3,
@@ -149,7 +158,8 @@
         },
         "name": "მაკარონის მიქსი ხუთიდან",
         "category": "მაკარონი",
-        "price": 8.0
+        "price": 8.0,
+        "AddtoCart": "კალათაში დამატება"
       },
       {
         "id": 4,
@@ -161,7 +171,8 @@
         },
         "name": "კლასიკური ტირამისუ",
         "category": "ტირამისუ",
-        "price": 5.5
+        "price": 5.5,
+        "AddtoCart": "კალათაში დამატება"
       },
       {
         "id": 5,
@@ -173,7 +184,8 @@
         },
         "name": "ფისტა ბაქლავა",
         "category": "ბაქლავა",
-        "price": 4.0
+        "price": 4.0,
+        "AddtoCart": "კალათაში დამატება"
       },
       {
         "id": 6,
@@ -185,7 +197,8 @@
         },
         "name": "ლიმონის ღვეზელი",
         "category": "ღვეზელი",
-        "price": 5.0
+        "price": 5.0,
+        "AddtoCart": "კალათაში დამატება"
       },
       {
         "id": 7,
@@ -197,7 +210,8 @@
         },
         "name": "წითელი ხავერდის ტორტი",
         "category": "ტორტი",
-        "price": 4.5
+        "price": 4.5,
+        "AddtoCart": "კალათაში დამატება"
       },
       {
         "id": 8,
@@ -209,7 +223,8 @@
         },
         "name": "დამარილებული კარამელის ბრაუნი",
         "category": "ბრაუნი",
-        "price": 4.5
+        "price": 4.5,
+        "AddtoCart": "კალათაში დამატება"
       },
       {
         "id": 9,
@@ -221,7 +236,8 @@
         },
         "name": "ვანილის პანაკოტა",
         "category": "პანაკოტა",
-        "price": 6.5
+        "price": 6.5,
+        "AddtoCart": "კალათაში დამატება"
       }
     ]
   }

@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import data from "../../../data.json";
 const Product = ({ product, onAddToCart, onQuantityChange, quantity }) => {
-  const { id, name, price, category, image } = product;
+  const { id, name, price, category, image, AddtoCart } = product;
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [localQuantity, setLocalQuantity] = useState(quantity);
   const { t, i18n } = useTranslation();
@@ -62,7 +62,7 @@ const Product = ({ product, onAddToCart, onQuantityChange, quantity }) => {
               onClick={handleAddToCart}
             >
               <img src={cartIcon} alt="Add to cart" />
-              {t("Add to Cart")}
+              {t(currentProduct.AddtoCart)}
             </div>
           )}
         </div>

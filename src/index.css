@@ -71,3 +71,19 @@ body
 {
   background-color: var(--rose-50-clr);
 }
+select
+{
+  border-radius: 50%;
+  border: 1px solid var(--red-clr);
+  background-color: var(--red-clr);
+  width: 50px;
+  height: 50px;
+  color: var(--white-clr);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+select:hover
+{
+  transform: scale(1.2);
+}
