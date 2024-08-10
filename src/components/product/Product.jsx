@@ -3,31 +3,37 @@ import cartIcon from "../../assets/images/icon-add-to-cart.svg";
 import minus from "../../assets/images/icon-decrement-quantity.svg";
 import plus from "../../assets/images/icon-increment-quantity.svg";
 import { useContext, useState } from "react";
-const Product = ({ data, onAddToCart, onQuantityChange }) => {
+import { useTranslation } from "react-i18next";
+import data from "../../../data.json";
+const Product = ({ product, onAddToCart, onQuantityChange, quantity }) => {
+  const { id, name, price, category, image } = product;
   const [isAddedToCart, setIsAddedToCart] = useState(false);
-  const [quantity, setQuantity] = useState(1);
-
+  const [localQuantity, setLocalQuantity] = useState(quantity);
+  const { t, i18n } = useTranslation();
+  const language = i18n.language;
+  const products = data[language].products;
+  const currentProduct = products.find((p) => p.id === id);
   const handleAddToCart = () => {
     setIsAddedToCart(true);
-    onAddToCart(data, quantity);
+    onAddToCart(currentProduct, localQuantity);
   };
 
   const handleQuantityChange = (newQuantity) => {
-    setQuantity(newQuantity);
-    onQuantityChange(data, newQuantity);
+    setLocalQuantity(newQuantity);
+    onQuantityChange(currentProduct, newQuantity);
   };
 
   const handleDecrementQuantity = () => {
-    if (quantity > 1) {
-      handleQuantityChange(quantity - 1);
+    if (localQuantity > 1) {
+      handleQuantityChange(localQuantity - 1);
     }
   };
 
   const handleIncrementQuantity = () => {
-    handleQuantityChange(quantity + 1);
+    handleQuantityChange(localQuantity + 1);
   };
 
-  const totalPrice = data.price * quantity;
+  const totalPrice = currentProduct.price * localQuantity;
 
   return (
     <>
@@ -35,7 +41,7 @@ const Product = ({ data, onAddToCart, onQuantityChange }) => {
         <div
           className="product-image"
           style={{
-            backgroundImage: `url(${data?.image.desktop})`,
+            backgroundImage: `url(${currentProduct.image.desktop})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -45,7 +51,7 @@ const Product = ({ data, onAddToCart, onQuantityChange }) => {
               <span className="btn" onClick={handleDecrementQuantity}>
                 <img src={minus} alt="Decrement quantity" />
               </span>
-              <span className="quantity">{quantity}</span>
+              <span className="quantity">{localQuantity}</span>
               <span className="btn" onClick={handleIncrementQuantity}>
                 <img src={plus} alt="Increment quantity" />
               </span>
@@ -56,15 +62,13 @@ const Product = ({ data, onAddToCart, onQuantityChange }) => {
               onClick={handleAddToCart}
             >
               <img src={cartIcon} alt="Add to cart" />
-              Add to Cart
+              {t("add_to_cart")}
             </div>
           )}
         </div>
-        <h3 className="text-preset-4 category">{data.category}</h3>
-        <h2 className="text-preset-3 name">{data.name}</h2>
-        <p className="price text-preset-3">
-          ${data.price}
-        </p>
+        <h3 className="text-preset-4 category">{currentProduct.category}</h3>
+        <h2 className="text-preset-3 name">{currentProduct.name}</h2>
+        <p className="price text-preset-3">${currentProduct.price}</p>
       </div>
     </>
   );

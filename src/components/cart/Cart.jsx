@@ -5,20 +5,25 @@ import removeIcon from "../../assets/images/icon-remove-item.svg";
 import emptyImage from "../../assets/images/illustration-empty-cart.svg";
 import carbon from "../../assets/images/icon-carbon-neutral.svg";
 const Cart = ({ cart, onQuantityChange, onRemoveProduct, quantity }) => {
-  const [cartItems, setCartItems] = useState([]);
-  const [totalQuantity, setTotalQuantity] = useState(0);
-  const handleQuantityChange = (product, quantity) => {
-    onQuantityChange(product, quantity);
-    const updatedCart = cart.map((item) => {
-      if (item.id === product.id) {
-        return { ...item, quantity };
-      }
-      return item;
-    });
-    setTotalQuantity(
-      updatedCart.reduce((acc, current) => acc + current.quantity, 0)
-    );
-  };
+    const [cartItems, setCartItems] = useState([]);
+    const [totalQuantity, setTotalQuantity] = useState(0);
+  
+    const handleQuantityChange = (product, quantity) => {
+      onQuantityChange(product, quantity);
+      const updatedCart = cart.map((item) => {
+        if (item.id === product.id) {
+          return { ...item, quantity };
+        }
+        return item;
+      });
+      setTotalQuantity(
+        updatedCart.reduce((acc, current) => acc + current.quantity, 0)
+      );
+    };
+  
+    const isInCart = (product) => {
+      return cart.some((item) => item.id === product.id);
+    };
   return (
     <>
       <section className="cart-section">
